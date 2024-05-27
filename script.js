@@ -1,4 +1,5 @@
-/* const RollNo="2022UCB6050"
+/* 
+const RollNo="2022UCB6050"
 let Name="Kartikeya"
 let CGPA=10
 console.log(RollNo[0])
@@ -7,11 +8,26 @@ console.log(typeof NaN)
 
 let a=""
 let b=Boolean(a)
-console.log(b) */
+console.log(b) 
 let a=5
 let b=Number("5")
 console.log(a+b)
 console.log(`Hello my name is KSM, I am ${a+15} years old`)  
+
+
+*/
+//Maps
+/*
+const map= new Map()
+map.set("IN","INDIA")
+map.set("US","UNITED STATES OF AMERICA")
+map.set("FR","FRANCE")
+map.set("IN","INDIA")
+
+for (let [key,value] of map){
+    console.log(key)
+}
+*/
 
 /*String
 
@@ -108,17 +124,6 @@ console.log(arr3)
 
 
 
-//Function
-/* 
-function sum(a,b){
-    return a+b
-}
-
-console.log(sum(5,2))
- */
-
-
-
 /*Objects */
 
 //Objects Literals
@@ -150,7 +155,7 @@ JSUser.greeting() */
 
 //Object 2
 
-const tinder={}
+/* const tinder={}
 tinder.userID="123abc"
 tinder.name="KSM"
 tinder.isLoggedIn=false
@@ -181,3 +186,164 @@ console.log(Object.entries(tinder))
 console.log(tinder.hasOwnProperty("isLoggedIn"))
 console.log(tinder.hasOwnProperty("isLogged"))
 
+*/
+
+
+//Object 3  Deconstruction [TypeDeff]
+/* 
+const course={
+    course: "JavaScript",
+    price: 0,
+    courseInstructor: "Chai aur Code"
+}
+//const {courseInstructor}=course
+//console.log(courseInstructor)
+const {courseInstructor: instructor}=course
+console.log(instructor)
+*/
+
+
+//Function
+/* 
+function sum(a=0,b=0){
+    return a+b
+}
+
+console.log(sum())
+console.log(sum(5,2))
+
+function greet(){
+    console.log("Namaste")
+}
+greet()
+
+function calculateTotal(...price){
+    return price
+}
+console.log(calculateTotal(100,200,300))
+ */
+
+//Passing an object in a function
+/* 
+const user={
+    userName: 'KSM',
+    age: 20
+}
+
+function handlObject(obj){
+    console.log(`Namaste ${obj.userName} your age is ${obj.age}`);
+}
+
+handlObject(user) */
+
+//Scopes
+
+/*
+let a=10 //Supports scope, Cannot be redefined, Can be reassign, Supports Hoisting[Cannot be used before declaring]
+var b=10 // Does not support scope, Can be redefined, Can be reassign
+const c=10 //Supports scope, Cannot be redefined, Cannot be reassign, Supports Hoisting[Cannot be used before declaring]
+
+var a=10
+console.log(a)
+var a=100
+console.log(a)
+*/
+
+//Arrow Functions
+/* 
+const user={
+    userName: "KSM",
+    price: 999,
+    welcome: function(){
+        console.log(`Welcome ${this.userName} to our website`)
+        //console.log(this)
+    }
+}
+
+user.welcome()
+console.log(this)
+
+ */
+/*
+function chai(){
+    let userName="KSM"
+    console.log(this.userName)
+}
+chai()
+
+function addTwo= (num1, num2)=>{
+    return num1+num2
+}
+function addThree= (num1, num2, num3)=>(return num1+num2+num3)
+
+
+
+*/
+
+//Immediately Invoked Function (IIF) [To prevent our function from polluton of Global scope]
+/* 
+(function chai(name){
+    console.log("Hello")
+})("KSM");
+
+ */
+
+//ControlFlow
+/* 
+if(true){
+    console.log("Namaste");
+}
+
+//Falsy values => [0,-0, 0n, false, "",'', null, undefined, NaN]
+//Truthy values => U-Falsy Values
+ */
+
+//Loops
+
+/* for (let i=1;i<=20;i++){
+    console.log("\n")
+    console.log(`${i}'s table`)
+    for (let j=1;j<=10;j++){
+        console.log(`${i} X ${j} = ${i*j}`)
+    }
+} 
+let i=1
+while (i<=10){
+    console.log(i)
+    i++
+}
+
+let arr=["KSM","VSM","Hello","Namaste"]
+for (let i in arr){
+    console.log(i)
+}
+for (let i of arr){
+    console.log(i)
+}
+
+const obj={
+    js: "JavaScript",
+    cpp: "C++",
+    py: "Python"
+}
+
+for (i in obj){
+    console.log(obj[i])
+}
+*/
+
+//Call back function using forEach
+/* 
+const arr=[10,20,30,40,50]
+
+arr.forEach( function (values){
+    console.log(values)
+})
+arr.forEach( (values,index, arr1)=>{
+    console.log(values,index,arr1)
+})
+ */
+
+//Call back function using filters
+//Call back function using maps
+//Call back function using reduce
