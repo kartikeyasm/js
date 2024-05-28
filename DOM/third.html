@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="lang">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLi(name, color){
+        const li=document.createElement('li')
+        li.innerHTML=name
+        li.setAttribute('style',`color: ${color}`)
+        document.querySelector(".lang").appendChild(li)
+        console.log(li)
+    }
+
+    addLi("Pyton", "pink")
+    addLi("C++", "blue")
+    addLi("JAVA", "red")
+
+    function addOptimizedLang(name){   //Optimize Code
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(name))
+        console.log(li)
+        document.querySelector(".lang").appendChild(li)
+    }
+    addOptimizedLang("Ruby")
+
+    //Edit
+    const firstLang= document.querySelector("li:nth-child(1)")
+    firstLang.setAttribute('style',"color: green");
+    firstLang.innerHTML="<h1>JS</h1>"
+
+    //Remove
+    const lastLang=document.querySelector("li:last-child")
+    lastLang.remove()
+    
+</script>
+</html>

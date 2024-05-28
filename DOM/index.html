@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM | Chai aur Code</title>
 </head>
-<body>
-    <div class="bg-black">
-        <h1 class="heading">DOM learning on Chai aur Code</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, iste ducimus? Aliquam quaerat placeat ab nostrum suscipit vel ratione corporis et non, nulla quibusdam id? Est fuga nesciunt voluptas in.</p>
+<body style="background-color: #212121; color: white;">
+    <div class="parent">
+        <div class="day">MON</div>
+        <div class="day">TUE</div>
+        <div class="day">WED</div>
+        <div class="day">THUR</div>
     </div>
 </body>
+<script>
+    const parent=document.querySelector(".parent")
+    console.log(parent.children)
+    const children = Array.from(parent.children)
+    children.forEach((child)=>{
+        if(child.innerText=="MON"){
+            child.style.color="green"
+        }
+        else if(child.innerHTML=="TUE"){
+            child.style.backgroundColor="green"
+        }
+        else{
+            child.style.color="black"
+            child.style.backgroundColor="white"
+        }
+    })
+</script>
 </html>
