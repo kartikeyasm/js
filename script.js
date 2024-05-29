@@ -331,7 +331,6 @@ for (i in obj){
     console.log(obj[i])
 }
 */
-
 //Call back function using forEach
 /* 
 const arr=[10,20,30,40,50]

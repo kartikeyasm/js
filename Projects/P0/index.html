@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h1>Hello Friends</h1>
+    <button>STOP</button>
+</body>
+<script>
+    const h1=document.querySelector("h1")
+    let timer=0
+    const chai=setTimeout(()=>{
+        h1.innerHTML="Chai pe lo;"
+        timer=5
+    },5000)
+    function plzStop(){
+        const button=document.querySelector("button")
+        button.addEventListener("click",()=>{
+            clearTimeout(chai)
+            if(timer!=5){
+                console.log("Stopped XD")
+            }
+            
+        })
+    }
+    plzStop()
+</script>
+</html>

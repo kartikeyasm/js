@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+</head>
+<body style="text-align: center;">
+    <h1>00:00:00</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    <button id="reset">RESET</button>
+    <button id="lap">LAP</button>
+    <br>
+
+</body>
+<script>
+    let startTime
+    const body=document.querySelector("body")
+    const timer=document.querySelector("h1")
+    let sec=0
+    let min=0
+    let hrs=0
+    let lapCount=0
+    function start(){        
+        startTime=setInterval(()=>{
+            timer.innerHTML=`${hrs}:${min}:${++sec}`
+            if(sec==60){
+                sec=0
+                min++
+            }
+            if(min==60){
+                min=0
+                hrs++
+            }
+        },1000)
+    }
+    function stop(){
+        clearInterval(startTime)
+    }
+    function reset(){
+        timer.innerHTML="00:00:00"
+        sec=0
+        min=0
+        hrs=0
+        const del=document.querySelectorAll("h3")
+        del.forEach((element)=>{
+            element.remove()
+        })
+    }
+    function lap(){
+        const h3=document.createElement("h3")
+        const br=document.createElement("br")
+        h3.innerText=`${++lapCount}: ${hrs}:${min}:${sec}`
+        body.appendChild(h3)
+        body.appendChild(br)
+    }
+    document.querySelector("#start").addEventListener('click',()=>{
+        start()
+    })
+    document.querySelector("#stop").addEventListener('click',()=>{
+        stop()
+    })
+    document.querySelector("#reset").addEventListener('click',()=>{
+        reset()
+    })
+    document.querySelector("#lap").addEventListener('click',()=>{
+        lap()
+    })
+
+</script>
+
+</html>
